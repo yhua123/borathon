@@ -1,0 +1,15 @@
+version: '2'
+services:
+  findserver:
+    image: library/findserver:0.1
+    container_name: findserver 
+    restart: always
+    volumes:
+      - ./data/:/borathon/data/
+    ports:
+      - 8003:8003
+  rsserver:
+    image: library/rsserver:0.1
+    restart: always
+    ports:
+      - 8002:8002
