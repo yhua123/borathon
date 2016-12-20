@@ -13,3 +13,9 @@ services:
     restart: always
     ports:
       - 8002:8002
+  uiserver:
+    image: library/uiserver:0.1
+    restart: always
+    ports:
+      - ????:????
+
