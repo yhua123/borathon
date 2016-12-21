@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="static/vendors/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="static/resources/css/map.css" rel="stylesheet">
+  </head>
+  <body ng-app="find.one.app" ng-controller="ReactingController as vm">
+    <show-modal></show-modal>
+    <draw-point pos-x="{{ vm.selfPosX }}" pos-y="{{ vm.selfPosY }}" type="self" show-dialog="" visible="1"></draw-point>
+    <draw-point pos-x="{{ vm.item1PosX }}" pos-y="{{ vm.item1PosY }}" type="item" show-dialog="vm.showInfo(1)" visible="{{ vm.visible }}"></draw-point>
+    <draw-point pos-x="{{ vm.item2PosX }}" pos-y="{{ vm.item2PosY }}" type="item" show-dialog="vm.showInfo(2)" visible="{{ vm.visible }}"></draw-point>
+    <draw-point pos-x="{{ vm.item3PosX }}" pos-y="{{ vm.item3PosY }}" type="item" show-dialog="vm.showInfo(3)" visible="{{ vm.visible }}"></draw-point>
+    <!--<draw-point pos-x="205" pos-y="135" type="item" show-dialog="vm.showInfo(3)" pos-id="3"></draw-point>
+    <draw-point pos-x="205" pos-y="175" type="item" show-dialog="vm.showInfo(4)" pos-id="4"></draw-point>
+    
+    <draw-point pos-x="205" pos-y="210" type="item" show-dialog="vm.showInfo(1)" pos-id="5"></draw-point>
+    <draw-point pos-x="205" pos-y="245" type="item" show-dialog="vm.showInfo(2)" pos-id="6"></draw-point>
+    <draw-point pos-x="205" pos-y="295" type="item" show-dialog="vm.showInfo(3)" pos-id="7"></draw-point>
+    <draw-point pos-x="205" pos-y="330" type="item" show-dialog="vm.showInfo(4)" pos-id="8"></draw-point>
+ 
+    <draw-point pos-x="205" pos-y="360" type="item" show-dialog="vm.showInfo(1)" pos-id="9"></draw-point>
+    <draw-point pos-x="205" pos-y="400" type="item" show-dialog="vm.showInfo(2)" pos-id="10"></draw-point>
+    <draw-point pos-x="205" pos-y="430" type="item" show-dialog="vm.showInfo(3)" pos-id="11"></draw-point>
+  
+    <draw-point pos-x="170" pos-y="105" type="item" show-dialog="vm.showInfo(2)" pos-id="12"></draw-point>
+    <draw-point pos-x="170" pos-y="135" type="item" show-dialog="vm.showInfo(3)" pos-id="13"></draw-point>
+    <draw-point pos-x="170" pos-y="175" type="item" show-dialog="vm.showInfo(4)" pos-id="14"></draw-point>
+    
+    <draw-point pos-x="170" pos-y="210" type="item" show-dialog="vm.showInfo(1)" pos-id="15"></draw-point>
+    <draw-point pos-x="170" pos-y="245" type="item" show-dialog="vm.showInfo(2)" pos-id="16"></draw-point>
+    <draw-point pos-x="170" pos-y="295" type="item" show-dialog="vm.showInfo(3)" pos-id="17"></draw-point>
+    <draw-point pos-x="170" pos-y="330" type="item" show-dialog="vm.showInfo(3)" pos-id="18"></draw-point>
+    
+    <draw-point pos-x="170" pos-y="360" type="item" show-dialog="vm.showInfo(3)" pos-id="19"></draw-point>
+    <draw-point pos-x="170" pos-y="410" type="item" show-dialog="vm.showInfo(3)" pos-id="20"></draw-point>
+    
+    <draw-point pos-x="130" pos-y="295" type="item" show-dialog="vm.showInfo(3)" pos-id="21"></draw-point>
+    <draw-point pos-x="130" pos-y="330" type="item" show-dialog="vm.showInfo(3)" pos-id="22"></draw-point>
+    <draw-point pos-x="130" pos-y="360" type="item" show-dialog="vm.showInfo(3)" pos-id="23"></draw-point>
+    <draw-point pos-x="130" pos-y="400" type="item" show-dialog="vm.showInfo(3)" pos-id="24"></draw-point>
+   -->
+    <img src="static/resources/img/map-2.jpeg" class="img-responsive" alt="map-18-floor"></img>
+    <button class="btn btn-success btn-rec" ng-click="vm.recommend()">Recommendation<button>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="static/vendors/jquery/jquery-1.12.3.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="static/vendors/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="static/vendors/angular/angular.js"></script>
+    <script src="static/resources/js/findone.module.js"></script>
+    <script src="static/resources/js/findone.data.js"></script>
+    <script src="static/resources/js/reacting.controller.js"></script>
+    <script src="static/resources/js/pointdrawing/pointdrawing.module.js"></script>
+    <script src="static/resources/js/pointdrawing/pointdrawing.directive.js"></script>
+    <script src="static/resources/js/modal/modal.module.js"></script>
+    <script src="static/resources/js/modal/modal.directive.js"></script>
+    <script src="static/resources/js/services/services.module.js"></script>
+    <script src="static/resources/js/services/services.get-item.js"></script>
+    <script src="static/resources/js/services/services.get-location.js"></script>
+    <script src="static/resources/js/services/services.get-recommendation.js"></script>
+  </body>
+</html>

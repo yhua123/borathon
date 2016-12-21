@@ -2,9 +2,11 @@ FROM library/photon:1.0
 
 RUN mkdir /borathon/
 
-COPY .xxxx /borathon/
+COPY ./findany /borathon/
+COPY ./findone/index.htm /borathon/
+COPY ./findone/static /borathon/static
 
-RUN chmod u+x /borathon/.XXXXX
+RUN chmod u+x /borathon/findany
 	
 WORKDIR /borathon/
-ENTRYPOINT ["/borathon/.XXXX"]
+ENTRYPOINT ["/borathon/findany"]
