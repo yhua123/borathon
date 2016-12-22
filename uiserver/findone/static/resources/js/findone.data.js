@@ -128,6 +128,26 @@
         'locationId': 24,
         'posX': 130,
         'posY': 400
+      },
+      {
+        'locationId': 32,
+        'posX': 165,
+        'posY': 75
+      },
+      {
+        'locationId': 33,
+        'posX': 205,
+        'posY': 105
+      },
+      {
+        'locationId': 34,
+        'posX': 200,
+        'posY': 60
+      },
+      {
+        'locationId': 35,
+        'posX': 235,
+        'posY': 85
       }
     ];
   } 

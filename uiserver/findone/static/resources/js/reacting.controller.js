@@ -1,4 +1,4 @@
-(function() {
+  (function() {
   
   'use strict';
   
@@ -12,6 +12,7 @@
     var vm = this;
     var increment = 5;
    
+    vm.map = 'map-18';
     vm.selfPosX = 0;
     vm.selfPosY = 0;
     vm.visible = 0;
@@ -21,6 +22,13 @@
     vm.showInfo = showInfo;
     vm.recommend = recommend;
    
+    $scope.$watch('vm.locationId', function(current) {
+      if(current) {
+        $log.debug('vm.locationId:' + current);
+        current > 30 ? vm.map = 'map-17' : vm.map = 'map-18';
+      }      
+    });
+  
     function repeatable() {
       GetLocationService.getLocation().then(getLocationSuccess, getLocationFailed);
     }
@@ -60,6 +68,7 @@
             }
           }            
         }
+        vm.locationId = locationId;
       }
      
     }
